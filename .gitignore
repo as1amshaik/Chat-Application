@@ -1,0 +1,43 @@
+# Node modules
+node_modules/
+config.js
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build output
+dist/
+build/
+
+# Dependency directories
+jspm_packages/
+
+# Testing
+coverage/
+*.lcov
+
+# IDE and editor directories
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Others
+*.tgz
+*.zip
+*.tar
