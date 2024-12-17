@@ -29,6 +29,10 @@ async function addFriend(req, res) {
     const  user_id = req.body.user_id
     const friend_id  = req.body.friend_id
 
+    // get friend name
+   
+
+
     console.log(" ADDING FRIENDS ")
 
     try {
@@ -36,8 +40,18 @@ async function addFriend(req, res) {
         const user = await User.findOne({ user_name: user_id }).populate('friends'); 
         const freind_user = await User.findOne({ user_name: friend_id }).populate('friends'); 
 
-        user.friends.push(friend_id);
-        freind_user.friends.push(user_id);
+       let friend_data={
+            id:friend_id,
+            name:freind_user.user_name
+        }
+
+        let user_data={
+            id:user_id,
+            name:user.user_name
+        }
+
+        user.friends.push(friend_data);
+        freind_user.friends.push(user_data);
 
         await user.save().then(()=>{
             console.log(friend_id+" friend added")

@@ -20,9 +20,13 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    friends: [{
-      type:String
-  }],
+    friends: [
+      {
+          id: String,
+          name: String
+      }
+  ],
+
   },
   { timestamps: true }
 );
